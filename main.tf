@@ -25,7 +25,7 @@ resource "aws_rds_cluster_instance" "aurora_instances" {
   count              = var.instance_count
   identifier         = "${var.cluster_identifier}-${count.index}"
   cluster_identifier = aws_rds_cluster.aurora.id
-  instance_class     = "db.t2.micro"
+  instance_class     = "db.t3.small"
   engine             = aws_rds_cluster.aurora.engine
   engine_version     = aws_rds_cluster.aurora.engine_version
   publicly_accessible = false
