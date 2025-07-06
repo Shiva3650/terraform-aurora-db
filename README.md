@@ -1,6 +1,6 @@
 # terraform-aurora-db
 
-Terraform module to deploy an Amazon Aurora PostgreSQL cluster using `t2.micro` instances.
+Terraform module to deploy an Amazon Aurora PostgreSQL cluster using `t3.small` instance.
 
 ## Usage
 
