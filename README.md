@@ -8,8 +8,8 @@ Terraform module to deploy an Amazon Aurora PostgreSQL cluster using `t2.micro` 
   module "aurora_pg" {
   source             = "git::https://github.com/Shiva3650/terraform-aurora-db.git"
   cluster_identifier = "aurora-pg-cluster"
-  master_username    = "admin"
-  master_password    = "W1reless"
+  master_username    = ""
+  master_password    = ""
   database_name      = "myAuroradb"
   subnet_ids         = ["subnet-abc123", "subnet-def456"]
   security_group_ids = ["sg-12345678"]
