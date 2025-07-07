@@ -1,4 +1,4 @@
-resource "aws_db_subnet_group" "aurora_subnet_group" {
+resource "aws_db_subnet_group" "aurora_subnet_group" {.
   name       = "${var.cluster_identifier}-subnet-group"
   subnet_ids = var.subnet_ids
 
