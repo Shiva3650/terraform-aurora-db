@@ -5,7 +5,7 @@ Terraform module to deploy an Amazon Aurora PostgreSQL cluster using `t3.small` 
 ## Usage
 
 ```hcl
-  module "aurora_pg" {
+  module "aurora_pg" {.
   source             = "git::https://github.com/Shiva3650/terraform-aurora-db.git"
   cluster_identifier = "aurora-pg-cluster"
   master_username    = "-"
