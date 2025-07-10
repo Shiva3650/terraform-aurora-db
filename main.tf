@@ -7,7 +7,7 @@ resource "aws_db_subnet_group" "aurora_subnet_group" {
   }
 }
 
-resource "aws_rds_cluster" "aurora" {.
+resource "aws_rds_cluster" "aurora" {
   cluster_identifier      = var.cluster_identifier
   engine                  = "aurora-postgresql"
   engine_version          = "13.6"
