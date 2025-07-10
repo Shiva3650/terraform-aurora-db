@@ -1,4 +1,4 @@
-variable "cluster_identifier" {.
+variable "cluster_identifier" {
   type        = string
   description = "Unique identifier for the Aurora cluster"
 }
