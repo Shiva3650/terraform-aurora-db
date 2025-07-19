@@ -2,7 +2,7 @@
 name: Terraform Simple Deploy
 
 on:
-  push::
+  push:
     branches: [ main ]
 
 jobs:
