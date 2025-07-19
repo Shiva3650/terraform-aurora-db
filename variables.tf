@@ -1,5 +1,5 @@
 variable "aws_region" {
-  default = "ap-south-1"
+  description = "AWS region to deploy resources in"
 }
 
 variable "ami_id" {
@@ -7,7 +7,7 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-  default = "t2.micro"
+  description = "EC2 instance type"
 }
 
 variable "vpc_id" {
@@ -27,11 +27,11 @@ variable "project" {
 }
 
 variable "db_identifier" {
-  default = "my-db-instance"
+  description = "RDS DB identifier"
 }
 
 variable "db_username" {
-  default = "admin"
+  description = "Database username"
 }
 
 variable "db_password" {
@@ -40,16 +40,15 @@ variable "db_password" {
 }
 
 variable "db_instance_class" {
-  default = "db.t3.micro"
+  description = "RDS instance class"
 }
 
 variable "db_allocated_storage" {
-  default = 20
+  description = "RDS allocated storage (in GB)"
 }
 
 variable "db_engine_version" {
   description = "Postgres engine minor version"
-  default     = "15.4"
 }
 
 variable "db_subnet_group_name" {
@@ -60,3 +59,9 @@ variable "db_subnet_ids" {
   description = "List of subnet IDs for the RDS subnet group"
   type        = list(string)
 }
+
+variable "key_name" {
+  description = "The name of the key pair to use for EC2 SSH access"
+  type        = string
+}
+
