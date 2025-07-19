@@ -2,8 +2,8 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_security_group" "ec2_sg" {
-  name        = "ec2_sg"
+resource "aws_security_group1" "ec21_sg" {
+  name        = "ec21_sg"
   description = "Allow SSH and HTTP access"
   vpc_id      = var.vpc_id
 
@@ -29,14 +29,14 @@ resource "aws_security_group" "ec2_sg" {
   }
 
   tags = {
-    Name        = "EC2SecurityGroup"
+    Name        = "EC2SecurityGroup1"
     Environment = var.environment
     Project     = var.project
   }
 }
 
-resource "aws_security_group" "rds_sg" {
-  name        = "rds_sg"
+resource "aws_security_group1" "rds1_sg" {
+  name        = "rds1_sg"
   description = "Allow Postgres access from EC2"
   vpc_id      = var.vpc_id
 
@@ -44,7 +44,7 @@ resource "aws_security_group" "rds_sg" {
     from_port   = 5432
     to_port     = 5432
     protocol    = "tcp"
-    security_groups = [aws_security_group.ec2_sg.id]
+    security_groups = [aws_security_group1.ec21_sg.id]
   }
 
   egress {
@@ -55,7 +55,7 @@ resource "aws_security_group" "rds_sg" {
   }
 
   tags = {
-    Name        = "RDSSecurityGroup"
+    Name        = "RDSSecurityGroup1"
     Environment = var.environment
     Project     = var.project
   }
@@ -64,7 +64,7 @@ resource "aws_security_group" "rds_sg" {
 resource "aws_instance" "app_server" {
   ami           = var.ami_id
   instance_type = var.instance_type
-  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  vpc_security_group_ids = [aws_security_group1.ec21_sg.id]
 
   tags = {
     Name        = "MyAppServer"
@@ -95,7 +95,7 @@ resource "aws_db_instance" "mydb" {
   password             = var.db_password
   skip_final_snapshot  = false
   publicly_accessible  = false
-  vpc_security_group_ids = [aws_security_group.rds_sg.id]
+  vpc_security_group_ids = [aws_security_group1.rds1_sg.id]
   db_subnet_group_name = aws_db_subnet_group.rds_subnet_group.name
 
   tags = {
