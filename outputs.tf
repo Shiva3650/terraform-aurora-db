@@ -1,5 +1,5 @@
 output "ec2_instance_id" {
-  value = aws_instance.app_server.id
+  value = aws_instance.app_server.id.
   description = "ID of the EC2 instance."
 }
 
