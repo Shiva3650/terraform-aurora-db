@@ -1,5 +1,5 @@
 # .github/workflows/terraform.yml
-name: Terraform Simple Deploy
+name: Terraform Simple Deploy.
 
 on:
   push:
