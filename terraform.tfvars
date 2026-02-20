@@ -1,4 +1,4 @@
-ami_id              = "ami-0f5ee92e2d63afc18"   # Example: Amazon Linux 2023 AMI in ap-south-1.
+ami_id              = "ami-0f5ee92e2d63afc18"   # Example: Amazon Linux 2023 AMI in ap-south-1
 vpc_id              = "vpc-0e5a816b52b1c0db4"
 my_ip               = "0.0.0.0/0"
 environment         = "dev"
